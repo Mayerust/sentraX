@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cybersecurity Dark Theme */
+    --background: 220 25% 6%;
+    --foreground: 120 100% 85%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 120 100% 85%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 120 100% 85%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 120 100% 85%;
+
+    --muted: 220 15% 12%;
+    --muted-foreground: 120 30% 65%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 220 25% 6%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 120 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom cybersecurity colors */
+    --cyber-green: 120 100% 50%;
+    --cyber-green-dark: 120 100% 30%;
+    --cyber-blue: 200 100% 60%;
+    --cyber-orange: 30 100% 60%;
+    --cyber-red: 0 100% 60%;
+    --cyber-purple: 280 100% 70%;
+    
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(120 100% 50%), hsl(200 100% 60%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 100% 60%), hsl(30 100% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(120 100% 30%), hsl(120 100% 50%));
+    
+    /* Shadows and glows */
+    --glow-cyber: 0 0 20px hsl(120 100% 50% / 0.3);
+    --glow-danger: 0 0 20px hsl(0 100% 60% / 0.3);
+    --shadow-cyber: 0 4px 20px hsl(120 100% 50% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(120 100% 50% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(200 100% 60% / 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--cyber-green) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--cyber-green) / 0.5);
+  }
+
+  /* Terminal font for code blocks */
+  .font-mono {
+    font-family: 'Courier New', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  /* Matrix effect background */
+  .matrix-bg {
+    background: 
+      linear-gradient(transparent 24%, hsla(120, 100%, 50%, 0.05) 25%, hsla(120, 100%, 50%, 0.05) 26%, transparent 27%, transparent 74%, hsla(120, 100%, 50%, 0.05) 75%, hsla(120, 100%, 50%, 0.05) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, hsla(120, 100%, 50%, 0.05) 25%, hsla(120, 100%, 50%, 0.05) 26%, transparent 27%, transparent 74%, hsla(120, 100%, 50%, 0.05) 75%, hsla(120, 100%, 50%, 0.05) 76%, transparent 77%, transparent);
+    background-size: 20px 20px;
+  }
+}

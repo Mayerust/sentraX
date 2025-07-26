@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>sentraX Dashboard</title>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-3xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-4">sentraX Pentest Automation</h1>
+    <label class="block mb-2">Target IPs (comma-separated):</label>
+    <textarea id="targets" class="border p-2 w-full" rows="2" placeholder="e.g. 192.0.2.10,198.51.100.5"></textarea>
+    <button id="startBtn" class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded">
+      Start Scan
+    </button>
+    <div id="output" class="mt-4 whitespace-pre-wrap font-mono bg-white p-4 border rounded"></div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
